@@ -7,10 +7,13 @@ import Link from "next/link";
 
 
 import Img from "@/assets/svg/hero.png";
+
 import ImgAbout from "@/assets/svg/hero-about.png";
 import ImgContacts from "@/assets/svg/hero-contacts.png";
 import ImgReviews from "@/assets/svg/reviews-hero.png";
 import ImgPrice from "@/assets/svg/hero-price.png";
+import starsLeft from '@/assets/svg/stars-left.svg';
+import starsRight from '@/assets/svg/stars-right.svg';
 
 
 import logo from "@/assets/svg/logo.svg";
@@ -93,7 +96,25 @@ export default function Hero() {
               className={style.logo}
             />
           </Link>
-          <p className={style.description} style={isHeroCards ? { marginBottom: "0px" } : {}}>{isHeroText}</p>
+          <p className={style.description} style={isHeroCards ? { marginBottom: "0px" } : {}}>{isHeroText}
+          <div className={style.stars_left}>
+            <Image
+              src={starsLeft}
+              alt="stars"
+              priority={true}
+              loading="eager"
+            />
+          </div>
+          <div className={style.stars_right}>
+            <Image
+              src={starsRight}
+              alt="stars"
+              priority={true}
+              loading="eager"
+            />
+          </div>
+          </p>
+          
           <div className={style.bacground} style={isHeroCards ? { height: "240px" } : {}}></div>
 
           <div className={style.bacground_img} style={isHeroCards ? { height: "240px" } : {}}>
