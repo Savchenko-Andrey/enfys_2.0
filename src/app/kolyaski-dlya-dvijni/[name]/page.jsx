@@ -9,7 +9,7 @@ import TableCards from "@/libs/pages/components/table-cards/table-cards";
 import { slugify } from 'transliteration';
 
 export default async function PageCard({ params }) {
-  var { data } = await (await fetch('https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=100', { cache: 'no-cache' })).json();
+  var { data } = await (await fetch('https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=1000', { cache: 'no-cache' })).json();
 
 
   var {

@@ -3,10 +3,7 @@ import Image from "next/image";
 import cornerRightGreen from '@/assets/svg/corner-right-green.svg';
 import cornerLeftGreen from '@/assets/svg/corner-left-green.svg';
 
-
-
 import styles from './about.module.scss'
-
 
 export default function About() {
   return (
@@ -36,8 +33,6 @@ export default function About() {
         </div>
 
         <button className={styles.btn}>ПРО МАГАЗИН</button>
-       
-    
       </div>
     </section>
   )}

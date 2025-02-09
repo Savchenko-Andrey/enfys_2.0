@@ -16,7 +16,7 @@ export async function GET() {
   try {
     var { data } = await (
       await fetch(
-        "https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=100",
+        "https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=1000",
         { cache: "no-cache" }
       )
     ).json();
@@ -34,27 +34,21 @@ export async function GET() {
       (product) => product?.attributes?.bestSellers === true
     );
 
-    // Функция для генерации страниц из предоставленного списка
     const generatePages = (category) => {
       return category.flatMap(({ link, list }) => [
         {
           url: `${BASE_URL}${link}`,
           lastModified: "2024-07-13",
-          changeFrequency: "weekly",
-          priority: "1.0",
         },
         ...(list
           ? list.map((item) => ({
               url: `${BASE_URL}${link}${item.link}`,
               lastModified: "2024-07-13",
-              changeFrequency: "weekly",
-              priority: "0.8",
             }))
           : []),
       ]);
     };
 
-    // Статические страницы
     const staticPages = [
       ...generatePages(shop),
       ...generatePages(strollers),
@@ -67,18 +61,13 @@ export async function GET() {
       {
         url: `${BASE_URL}/novi-nadhodzhennya`,
         lastModified: "2024-07-13",
-        changeFrequency: "weekly",
-        priority: "0.8",
       },
       {
         url: `${BASE_URL}/hiti-prodazhiv`,
         lastModified: "2024-07-13",
-        changeFrequency: "weekly",
-        priority: "0.8",
       },
     ];
 
-    // Динамические страницы
     const topSales = (data) => {
       return data.map((item) => {
         const link = slugify(item.attributes.title);
@@ -87,8 +76,6 @@ export async function GET() {
         return {
           url: `${BASE_URL}/hiti-prodazhiv/${link}`,
           lastModified: moment(isoDate).format("YYYY-MM-DD"),
-          changeFrequency: "weekly",
-          priority: "0.8",
         };
       });
     };
@@ -101,8 +88,6 @@ export async function GET() {
         return {
           url: `${BASE_URL}/novi-nadhodzhennya/${link}`,
           lastModified: moment(isoDate).format("YYYY-MM-DD"),
-          changeFrequency: "weekly",
-          priority: "0.8",
         };
       });
     };
@@ -115,12 +100,9 @@ export async function GET() {
       return {
         url: `${BASE_URL}/${category}/${link}`,
         lastModified: moment(isoDate).format("YYYY-MM-DD"),
-        changeFrequency: "weekly",
-        priority: "1.0",
       };
     });
 
-    // Объединяем все страницы
     const allPages = [
       ...staticPages,
       ...topSales(filterNewArrivals),
@@ -128,7 +110,6 @@ export async function GET() {
       ...dynamicPages,
     ];
 
-    // Генерируем XML
     const sitemapXml = generateSitemapXml(allPages);
 
     return new Response(sitemapXml, {
@@ -152,8 +133,6 @@ function generateSitemapXml(data) {
         <url>
           <loc>${item.url}</loc>
           <lastmod>${item.lastModified}</lastmod>
-          <changefreq>${item.changeFrequency}</changefreq>
-          <priority>${item.priority}</priority>
         </url>
       `
         )
