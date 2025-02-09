@@ -15,7 +15,6 @@ export default async function PageCard({ params }) {
     })
   ).json();
 
-
   var {
     data: {
       attributes: { dollar },
