@@ -80,6 +80,7 @@ export default function Hero() {
 
   return (
     <>
+    {isClient && 
       <section className={style.section}>
         <div className={style.container} style={isHeroCards ? { height: "240px" } : {}}>
           <h1 className={style.title} style={{ display: "none" }}>ENFYS</h1>
@@ -135,6 +136,7 @@ export default function Hero() {
           <Line />
         </div>
       </section>
+      }
     </>
   );
 }

@@ -61,9 +61,10 @@
 .logo {
     width: 200px;
     height: 96px;
-    animation: hide 2s ;
+    animation: 3s 2s anim-lineUp ease-out alternate-reverse forwards;
     @media (max-width: 767px) {
         margin-top: 100%;
+        animation: 3s 2s anim-lineUp ease-out alternate-reverse forwards;
     }
 }
 @keyframes hide {
@@ -75,6 +76,7 @@
     }
     
 }
+
 
 .title {
     z-index: 2;
@@ -100,27 +102,28 @@
     line-height: normal;
     text-transform: uppercase;
     max-width: 224px;
-    animation: hideDiscript 2s ;
-    animation-delay: 2s;
-    opacity: 0;
-    animation-fill-mode: forwards;
-
+    opacity: 1;
+    animation: 3s 2s anim-lineUp ease-out alternate-reverse forwards;
     @media screen and (min-width: 768px) {
         max-width: 652px;
         font-size: 48px;
         padding-top: 0;
         margin-bottom: 60px;
-    }
-}
-@keyframes hideDiscript {
-    0%{
-        opacity: 0;
-    }
-    100%{
         opacity: 1;
+        animation: 3s 2s anim-lineUp ease-out alternate-reverse forwards;
     }
-    
 }
+
+@keyframes anim-lineUp {
+    0% {
+      opacity: 1;
+      
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
 .bacground {
     position: absolute;
     width: 100vw;
