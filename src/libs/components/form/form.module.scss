@@ -74,6 +74,7 @@
   width: 100%;
   margin-top: 30px;
   display: flex;
+  align-items: center;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
@@ -91,6 +92,9 @@
     font-size: 18px;
     line-height: 17px;
   }
+  @media (max-width: 375px) {
+    margin-left: 0;
+    }
 }
 
 .btn {
@@ -113,4 +117,38 @@
     width: 330px;
     height: 60px;
   }
+}
+
+.cb_custom {
+  appearance: none; 
+  width: 25px;
+  height: 25px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: background 0.3s, border 0.3s;
+  @media (max-width: 425px) {
+  margin-left: 30px;
+  }
+  @media (max-width: 375px) {
+    margin-left: 0;
+    }
+}
+
+.cb_custom:checked {
+  background-color: rgb(129, 246, 151);
+  border-color:  #FF8A00;
+}
+
+.cb_custom:checked::after {
+  content: "✔"; 
+  font-size: 18px;
+  color: #FF8A00;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -88,6 +88,7 @@ export default function ContactForm({setIsThenkyou}) {
           Я прочитав/ла та погоджуюся з Політикою конфедиційності.
         </label>
         <input
+          className={styles.cb_custom}
           type="checkbox"
           id="agree"
           name="agree"
