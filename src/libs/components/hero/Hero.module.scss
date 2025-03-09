@@ -2,6 +2,7 @@
     width: 100%;
     // min-height: 550px;
     z-index: 1;
+    user-select: none;
 }
 
 .container {
@@ -61,11 +62,22 @@
 .logo {
     width: 200px;
     height: 96px;
+    animation: logo-start 500ms forwards;
     @media (max-width: 767px) {
         margin-top: 100%;
     }
 }
 
+@keyframes logo-start {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .title {
     z-index: 2;
     color: #FFF;
@@ -80,6 +92,7 @@
     }
 }   
 
+
 .description {
     z-index: 2;
     text-align: center;
@@ -89,12 +102,24 @@
     line-height: normal;
     text-transform: uppercase;
     max-width: 224px;
+    animation: titleStart 500ms ease-in-out forwards;
+    animation-delay: 500ms;
 
     @media screen and (min-width: 768px) {
         max-width: 652px;
         font-size: 48px;
         padding-top: 0;
         margin-bottom: 60px;
+    }
+}
+@keyframes titleStart {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
