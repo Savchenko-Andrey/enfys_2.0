@@ -91,7 +91,7 @@ export default function Header() {
                 height="50"
                 viewBox="0 0 24 24">
                 <path fill="none"
-                  stroke={path === "/" ? "currentColor" : "#FF8A00"}
+                  stroke={path === "/" ? "currentColor" : " #ffa034a1"}
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="1.5"
