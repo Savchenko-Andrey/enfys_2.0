@@ -19,21 +19,20 @@ import convenience from '@/assets/svg/icons/convenience.svg';
 const social = [
   {
     icon: facebook,
-    link: "/"
+    link: "https://facebook.com/enfys.babyshop"
   },
   {
     icon: instagram,
-    link: "/"
+    link: "https://instagram.com/enfys.babyshop"
   },
   {
     icon: youtube,
-    link: "/"
+    link: "https://www.youtube.com/channel/UCqi-BAHEeJ8Iwlm9ut5-Zqw/"
   },
   {
     icon: viber,
-    link: "/"
+    link: "viber://chat?number=%2B380938138818"
   },
-  
 ];
 
 
@@ -66,7 +65,7 @@ export default function Footer() {
             <ul className={styles.container_icon}>
               {social.map(({icon, link}, id) => (
               <li key={id}>
-                <Link href={link} className={styles.icon}>
+                <Link href={link} target="_blank" rel="noopener noreferrer" className={styles.icon}>
                   <Image 
                       src={icon}
                       alt="icon"
