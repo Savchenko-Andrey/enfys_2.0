@@ -100,7 +100,7 @@ export default function Footer() {
             </ul>
 
             <ul>
-              <li><a className={styles.text} href="/">Доставка та оплата</a></li>
+              <li><a className={styles.text} href="/dostavka-ta-oplata">Доставка та оплата</a></li>
               <li><a className={styles.text} href="/">Пакунок малюка</a></li>
               <li><a className={styles.text} href="/">Договір публічної оферти</a></li>
               <li><a className={styles.text} href="/">Обмін повернення</a></li>
