@@ -9,7 +9,8 @@ const Content = ({ text }) => {
         <ul>
           {text.map((item, id) => (
             <li key={id}>
-              <h3 className={styles.item}>{item.title}</h3>
+              <h2 className={styles.title}>{item.title}</h2>
+              <h3 className={styles.item}>{item.pre_title}</h3>
               <ul className={styles.list}>
                 {item.description.map(({ text }, id) => (
                   <li key={id} className={styles.item}>

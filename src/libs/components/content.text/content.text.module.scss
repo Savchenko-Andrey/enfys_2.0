@@ -1,14 +1,26 @@
+.container{
+  padding: 50px 20px;
+}
 .list {
-  width: 50vw;
-  height: 300px;
+  // width: 50vw;
+  // height: 300px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1200px;
+  // justify-content: center;
+  // align-items: center;
   gap: 15px;
   flex-direction: column;
+  text-align: left;
+  padding: 20px 0;
 }
 
 .item {
-  color: red;
-  font-size: 24px;
+  color: black;
+  font-size: 16px;
+}
+.title{
+  text-align: center;
+  color: black;
+  font-size: clamp(25px, 3vw, 30px);
+  padding-bottom: 40px;
 }
