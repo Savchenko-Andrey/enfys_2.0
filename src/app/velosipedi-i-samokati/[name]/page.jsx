@@ -10,7 +10,7 @@ import { slugify } from 'transliteration';
 
 export default async function PageCard({ params }) {
   var { data } = await (
-    await fetch("https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=100", {
+    await fetch("https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=1000", {
       cache: "no-cache",
     })
   ).json();

@@ -72,6 +72,7 @@ export default function PriceList({ data, dollar }) {
           <ul className={styles.card_container}>
             {isFilters.map((item, id) => {
               const ukrainianName = item.attributes.link;
+              const oldPrice = Math.floor(isFilters[id].attributes.oldPrice * dollar);
 
               return (
                 <li key={id} className={styles.content}>
@@ -98,7 +99,7 @@ export default function PriceList({ data, dollar }) {
                         ?
                         <p className={styles.price}>
                           {Math.floor(isFilters[id].attributes.price * dollar)} ГРИВЕНЬ
-                          <span className={styles.old_price}>{Math.floor(isFilters[id].attributes.oldPrice * dollar)} ГРИВЕНЬ</span>
+                          <span className={styles.old_price}>{oldPrice > 0 ? oldPrice + 'ГРИВЕНЬ' : ""}</span>
                         </p>
                         :
                         isFilters[id].attributes.inStock === "очікуємо" ?

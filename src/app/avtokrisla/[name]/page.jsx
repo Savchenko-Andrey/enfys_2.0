@@ -10,11 +10,10 @@ import { slugify } from 'transliteration';
 
 export default async function PageCard({ params }) {
   var { data } = await (
-    await fetch("https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=100", {
+    await fetch("https://www.admin-enfys.space/api/tests?populate=*&pagination[pageSize]=1000", {
       cache: "no-cache",
     })
   ).json();
-
 
   var {
     data: {
@@ -48,14 +47,14 @@ export default async function PageCard({ params }) {
     <>
       {card.length !== 0 ?
       <>
-      <HeroCards selectedCategory={selectedCategory} />
-      <AboutCardsGallery data={card} id={name} dollar={dollar} dataBase={updatedData} />
-      <Conditions />
-      <AboutCards data={card} id={name} dollar={dollar} />
-      {/* <Advantages /> */}
-      <TableCards data={card} id={name} />
-          <Card dataBase={updatedData} />
-        </>
+        <HeroCards selectedCategory={selectedCategory} />
+        <AboutCardsGallery data={card} id={name} dollar={dollar} dataBase={updatedData} />
+        <Conditions />
+        <AboutCards data={card} id={name} dollar={dollar} />
+        {/* <Advantages /> */}
+        <TableCards data={card} id={name} />
+        <Card dataBase={updatedData} />
+      </>
         :
         <NotFound />
       }
